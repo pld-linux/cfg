@@ -2,10 +2,11 @@
 #	has the same name.
 # NOTE: API is NOT documented
 Summary:	OSSP cfg - Configuration Parsing
-Summary(pl):	OSSP cfg - parsowanie konfiguracji.
+Summary(pl):	OSSP cfg - parsowanie konfiguracji
 Name:		cfg
 Version:	0.9.4
 Release:	0.1
+Epoch:		0
 License:	distributable (see README)
 Group:		Libraries
 Source0:	ftp://ftp.ossp.org/pkg/lib/cfg/%{name}-%{version}.tar.gz
@@ -34,8 +35,21 @@ comments, etc. The library API allows importing a configuration text
 into an Abstract Syntax Tree (AST), traversing the AST and optionally
 exporting the AST again as a configuration text.
 
-#%%description -l pl
-# I need API documentation instead pl description.
+%description -l pl
+OSSP cfg to biblioteka ISO-C do parsowania dowolnych plików
+konfiguracyjnych w stylu C/C++. Konfiguracja jest sekwencj± dyrektyw.
+Ka¿da dyrektywa zawiera zero lub wiêcej tokenów. Ka¿dy token mo¿e byæ
+³añcuchem albo znowu ca³± sekwencj±. Oznacza to, ¿e sk³adnia
+konfiguracji ma strukturê rekurencyjn±, co pozwala tworzyæ
+konfiguracje z dowolnie zagnie¿d¿onymi sekcjami.
+
+Sk³adnia konfiguracji udostêpnia dodatkowo z³o¿one
+pojedyncze/podwójne/zrównowa¿one cytowanie tokenów,
+szesnastkowe/ósemkowe/dziesiêtne kodowanie znaków, cytowanie znaków,
+komentarze w stylu C/C++ i pow³oki itp. API biblioteki umo¿liwia
+importowanie tekstu konfiguracji do abstrakcyjnych drzew sk³adniowych
+(AST), przechodzenie po AST i opcjonalnie eksportowanie AST z powrotem
+do tekstu konfiguracji.
 
 %package devel
 Summary:	OSSP cfg - Configuration Parsing - header files and development libraries
@@ -83,9 +97,8 @@ rm -rf $RPM_BUILD_ROOT
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%post -p /sbin/ldconfig
-
-%postun -p /sbin/ldconfig
+%post	-p /sbin/ldconfig
+%postun	-p /sbin/ldconfig
 
 %files
 %defattr(644,root,root,755)
