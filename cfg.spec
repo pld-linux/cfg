@@ -17,7 +17,6 @@ BuildRequires:	automake
 BuildRequires:	bison
 BuildRequires:	flex	
 BuildRequires:	libtool
-Requires(post,postun):	/sbin/ldconfig
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
