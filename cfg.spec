@@ -12,6 +12,7 @@ Source0:	ftp://ftp.ossp.org/pkg/lib/cfg/%{name}-%{version}.tar.gz
 # Source0-md5:	a41ac64a92a55030f44e307cc5461657
 URL:		http://www.ossp.org/pkg/lib/cfg/
 BuildRequires:	autoconf
+BuildRequires:	automake
 BuildRequires:	bison
 BuildRequires:	flex	
 BuildRequires:	libtool
@@ -40,6 +41,7 @@ exporting the AST again as a configuration text.
 Summary:	OSSP cfg - Configuration Parsing - header files and development libraries
 Summary(pl):	OSSP cfg - parsowanie konfiguracji - pliki nag³ówkowe i biblioteki dla deweloperów
 Group:		Development/Libraries
+Requires:       %{name} = %{epoch}:%{version}-%{release}
 
 %description devel
 OSSP cfg - Configuration Parsing - header files and development
@@ -53,6 +55,7 @@ deweloperów.
 Summary:	OSSP cfg - Configuration Parsing - static libraries
 Summary(pl):	OSSP cfg - parsowanie konfiguracji - biblioteki statyczne
 Group:		Development/Libraries
+Requires:       %{name}-devel = %{epoch}:%{version}-%{release}
 
 %description static
 OSSP cfg - Configuration Parsing - static libraries.
