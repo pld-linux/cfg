@@ -1,22 +1,30 @@
-# TODO: resolve conflict with libcfg+-devel - header files
-#	has the same name.
-# NOTE: API is NOT documented
+# TODO: 1. Resolve conflict with libcfg+-devel - header files
+#	   as the same name.
+#	2. Fix refreshing configure.
+# NOTE: Lack of C API documentation in manpage
+
+# Conditional builds:
+%bcond_with	ex	# build with external OSSP ex library
+%bcond_without	perl	# build Perl bindings to C API
+
 Summary:	OSSP cfg - Configuration Parsing
 Summary(pl):	OSSP cfg - parsowanie konfiguracji
 Name:		cfg
-Version:	0.9.4
+Version:	0.9.9
 Release:	0.1
 Epoch:		0
 License:	distributable (see README)
 Group:		Libraries
 Source0:	ftp://ftp.ossp.org/pkg/lib/cfg/%{name}-%{version}.tar.gz
-# Source0-md5:	a41ac64a92a55030f44e307cc5461657
+# Source0-md5:	66576d4d4ee01b29666aa19aaa3faa71	
 URL:		http://www.ossp.org/pkg/lib/cfg/
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	bison
 BuildRequires:	flex	
 BuildRequires:	libtool
+%{?with_ex:BuildRequires:	ex-devel}
+%{?with_perl:BuildRequires:	perl-devel}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -76,22 +84,44 @@ OSSP cfg - Configuration Parsing - static libraries.
 %description static -l pl
 OSSP cfg - parsowanie konfiguracji - biblioteki statyczne.
 
+%package -n perl-cfg
+Summary:	OSSP cfg - Configuration Parsing - static libraries
+Summary(pl):	OSSP cfg - parsowanie konfiguracji - biblioteki statyczne
+Group:		Development/Languages/Perl
+
+%description -n perl-cfg
+OSSP cfg - Configuration Parsing - Perl bindings to C API.
+
 %prep
 %setup -q
 
-%build
-mv -f aclocal.m4 acinclude.m4
-%{__libtoolize}
-%{__aclocal}
-%{__autoconf}
-%configure
+%build 
+# don't uncomment what is commented out below -
+# - since v0.9.7 it doesn't work
+#mv -f aclocal.m4 acinclude.m4
+#%%{__libtoolize}
+#%%{__aclocal}
+#%%{__autoconf}
+%configure \
+	%{?with_ex:--with-ex} \
+	%{?with_perl:--with-perl}
+
 %{__make}
+
+%if %{with_perl}
+cd perl
+%{__perl} Makefile.PL \
+	INSTALLDIRS=vendor
+%{__make} \
+	OPTIMIZE="%{rpmcflags}"
+%endif
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
-	DESTDIR=$RPM_BUILD_ROOT
+	DESTDIR=$RPM_BUILD_ROOT \
+	INSTALLDIRS=vendor
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -110,8 +140,18 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/lib*.so
 %{_libdir}/lib*.la
 %{_includedir}/*
-%{_mandir}/man3/*
+%{_mandir}/man3/cfg.3.*
 
 %files static
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/lib*.a
+
+%files -n perl-cfg
+%defattr(644,root,root,755)
+%dir %{perl_vendorarch}/OSSP
+%{perl_vendorarch}/OSSP/cfg.pm
+%dir %{perl_vendorarch}/auto/OSSP
+%dir %{perl_vendorarch}/auto/OSSP/cfg
+%{perl_vendorarch}/auto/OSSP/cfg/cfg.bs
+%attr(755,root,root) %{perl_vendorarch}/auto/OSSP/cfg/cfg.so
+%{_mandir}/man3/OSSP::cfg.3pm.*
