@@ -2,11 +2,11 @@
 #	   as the same name.
 #	2. Fix refreshing configure.
 # NOTE: Lack of C API documentation in manpage
-
+#
 # Conditional builds:
 %bcond_with	ex	# build with external OSSP ex library
 %bcond_without	perl	# build Perl bindings to C API
-
+#
 Summary:	OSSP cfg - Configuration Parsing
 Summary(pl):	OSSP cfg - parsowanie konfiguracji
 Name:		cfg
@@ -21,9 +21,9 @@ URL:		http://www.ossp.org/pkg/lib/cfg/
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	bison
+%{?with_ex:BuildRequires:	ex-devel}
 BuildRequires:	flex	
 BuildRequires:	libtool
-%{?with_ex:BuildRequires:	ex-devel}
 %{?with_perl:BuildRequires:	perl-devel}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -85,12 +85,15 @@ OSSP cfg - Configuration Parsing - static libraries.
 OSSP cfg - parsowanie konfiguracji - biblioteki statyczne.
 
 %package -n perl-cfg
-Summary:	OSSP cfg - Configuration Parsing - static libraries
-Summary(pl):	OSSP cfg - parsowanie konfiguracji - biblioteki statyczne
+Summary:	OSSP cfg - Configuration Parsing - Perl bindings
+Summary(pl):	OSSP cfg - parsowanie konfiguracji - dowi±zania Perla
 Group:		Development/Languages/Perl
 
 %description -n perl-cfg
 OSSP cfg - Configuration Parsing - Perl bindings to C API.
+
+%description -n perl-cfg -l pl
+OSSP cfg - parsowanie konfiguracji - dowi±zania Perla do API C.
 
 %prep
 %setup -q
@@ -140,7 +143,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/lib*.so
 %{_libdir}/lib*.la
 %{_includedir}/*
-%{_mandir}/man3/cfg.3.*
+%{_mandir}/man3/cfg.3*
 
 %files static
 %defattr(644,root,root,755)
@@ -154,4 +157,4 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{perl_vendorarch}/auto/OSSP/cfg
 %{perl_vendorarch}/auto/OSSP/cfg/cfg.bs
 %attr(755,root,root) %{perl_vendorarch}/auto/OSSP/cfg/cfg.so
-%{_mandir}/man3/OSSP::cfg.3pm.*
+%{_mandir}/man3/OSSP::cfg.3pm*
