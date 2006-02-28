@@ -16,13 +16,13 @@ Epoch:		0
 License:	distributable (see README)
 Group:		Libraries
 Source0:	ftp://ftp.ossp.org/pkg/lib/cfg/%{name}-%{version}.tar.gz
-# Source0-md5:	66576d4d4ee01b29666aa19aaa3faa71	
+# Source0-md5:	66576d4d4ee01b29666aa19aaa3faa71
 URL:		http://www.ossp.org/pkg/lib/cfg/
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	bison
 %{?with_ex:BuildRequires:	ex-devel}
-BuildRequires:	flex	
+BuildRequires:	flex
 BuildRequires:	libtool
 %{?with_perl:BuildRequires:	perl-devel}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -62,7 +62,7 @@ do tekstu konfiguracji.
 Summary:	OSSP cfg - Configuration Parsing - header files and development libraries
 Summary(pl):	OSSP cfg - parsowanie konfiguracji - pliki nag³ówkowe i biblioteki dla deweloperów
 Group:		Development/Libraries
-Requires:       %{name} = %{epoch}:%{version}-%{release}
+Requires:	%{name} = %{epoch}:%{version}-%{release}
 
 %description devel
 OSSP cfg - Configuration Parsing - header files and development
@@ -76,7 +76,7 @@ deweloperów.
 Summary:	OSSP cfg - Configuration Parsing - static libraries
 Summary(pl):	OSSP cfg - parsowanie konfiguracji - biblioteki statyczne
 Group:		Development/Libraries
-Requires:       %{name}-devel = %{epoch}:%{version}-%{release}
+Requires:	%{name}-devel = %{epoch}:%{version}-%{release}
 
 %description static
 OSSP cfg - Configuration Parsing - static libraries.
@@ -98,7 +98,7 @@ OSSP cfg - parsowanie konfiguracji - dowi±zania Perla do API C.
 %prep
 %setup -q
 
-%build 
+%build
 # don't uncomment what is commented out below -
 # - since v0.9.7 it doesn't work
 #mv -f aclocal.m4 acinclude.m4
