@@ -8,7 +8,7 @@
 %bcond_without	perl	# build Perl bindings to C API
 #
 Summary:	OSSP cfg - Configuration Parsing
-Summary(pl):	OSSP cfg - parsowanie konfiguracji
+Summary(pl.UTF-8):   OSSP cfg - parsowanie konfiguracji
 Name:		cfg
 Version:	0.9.9
 Release:	0.1
@@ -42,25 +42,25 @@ comments, etc. The library API allows importing a configuration text
 into an Abstract Syntax Tree (AST), traversing the AST and optionally
 exporting the AST again as a configuration text.
 
-%description -l pl
-OSSP cfg to biblioteka ISO-C do parsowania dowolnych plików
-konfiguracyjnych w stylu C/C++. Konfiguracja jest sekwencj± dyrektyw.
-Ka¿da dyrektywa zawiera zero lub wiêcej tokenów. Ka¿dy token mo¿e byæ
-³añcuchem albo znowu ca³± sekwencj±. Oznacza to, ¿e sk³adnia
-konfiguracji ma strukturê rekurencyjn±, co pozwala tworzyæ
-konfiguracje z dowolnie zagnie¿d¿onymi sekcjami.
+%description -l pl.UTF-8
+OSSP cfg to biblioteka ISO-C do parsowania dowolnych plikÃ³w
+konfiguracyjnych w stylu C/C++. Konfiguracja jest sekwencjÄ… dyrektyw.
+KaÅ¼da dyrektywa zawiera zero lub wiÄ™cej tokenÃ³w. KaÅ¼dy token moÅ¼e byÄ‡
+Å‚aÅ„cuchem albo znowu caÅ‚Ä… sekwencjÄ…. Oznacza to, Å¼e skÅ‚adnia
+konfiguracji ma strukturÄ™ rekurencyjnÄ…, co pozwala tworzyÄ‡
+konfiguracje z dowolnie zagnieÅ¼dÅ¼onymi sekcjami.
 
-Sk³adnia konfiguracji udostêpnia dodatkowo z³o¿one
-pojedyncze/podwójne/zrównowa¿one cytowanie tokenów,
-szesnastkowe/ósemkowe/dziesiêtne kodowanie znaków, cytowanie znaków,
-komentarze w stylu C/C++ i pow³oki itp. API biblioteki umo¿liwia
-importowanie tekstu konfiguracji do abstrakcyjnych drzew sk³adniowych
+SkÅ‚adnia konfiguracji udostÄ™pnia dodatkowo zÅ‚oÅ¼one
+pojedyncze/podwÃ³jne/zrÃ³wnowaÅ¼one cytowanie tokenÃ³w,
+szesnastkowe/Ã³semkowe/dziesiÄ™tne kodowanie znakÃ³w, cytowanie znakÃ³w,
+komentarze w stylu C/C++ i powÅ‚oki itp. API biblioteki umoÅ¼liwia
+importowanie tekstu konfiguracji do abstrakcyjnych drzew skÅ‚adniowych
 (AST), przechodzenie po AST i opcjonalnie eksportowanie AST z powrotem
 do tekstu konfiguracji.
 
 %package devel
 Summary:	OSSP cfg - Configuration Parsing - header files and development libraries
-Summary(pl):	OSSP cfg - parsowanie konfiguracji - pliki nag³ówkowe i biblioteki dla deweloperów
+Summary(pl.UTF-8):   OSSP cfg - parsowanie konfiguracji - pliki nagÅ‚Ã³wkowe i biblioteki dla deweloperÃ³w
 Group:		Development/Libraries
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 
@@ -68,32 +68,32 @@ Requires:	%{name} = %{epoch}:%{version}-%{release}
 OSSP cfg - Configuration Parsing - header files and development
 libraries.
 
-%description devel -l pl
-OSSP cfg - parsowanie konfiguracji - pliki nag³ówkowe i biblioteki dla
-deweloperów.
+%description devel -l pl.UTF-8
+OSSP cfg - parsowanie konfiguracji - pliki nagÅ‚Ã³wkowe i biblioteki dla
+deweloperÃ³w.
 
 %package static
 Summary:	OSSP cfg - Configuration Parsing - static libraries
-Summary(pl):	OSSP cfg - parsowanie konfiguracji - biblioteki statyczne
+Summary(pl.UTF-8):   OSSP cfg - parsowanie konfiguracji - biblioteki statyczne
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{epoch}:%{version}-%{release}
 
 %description static
 OSSP cfg - Configuration Parsing - static libraries.
 
-%description static -l pl
+%description static -l pl.UTF-8
 OSSP cfg - parsowanie konfiguracji - biblioteki statyczne.
 
 %package -n perl-cfg
 Summary:	OSSP cfg - Configuration Parsing - Perl bindings
-Summary(pl):	OSSP cfg - parsowanie konfiguracji - dowi±zania Perla
+Summary(pl.UTF-8):   OSSP cfg - parsowanie konfiguracji - dowiÄ…zania Perla
 Group:		Development/Languages/Perl
 
 %description -n perl-cfg
 OSSP cfg - Configuration Parsing - Perl bindings to C API.
 
-%description -n perl-cfg -l pl
-OSSP cfg - parsowanie konfiguracji - dowi±zania Perla do API C.
+%description -n perl-cfg -l pl.UTF-8
+OSSP cfg - parsowanie konfiguracji - dowiÄ…zania Perla do API C.
 
 %prep
 %setup -q
