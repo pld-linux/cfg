@@ -8,7 +8,7 @@
 %bcond_without	perl	# build Perl bindings to C API
 #
 Summary:	OSSP cfg - Configuration Parsing
-Summary(pl.UTF-8):   OSSP cfg - parsowanie konfiguracji
+Summary(pl.UTF-8):	OSSP cfg - parsowanie konfiguracji
 Name:		cfg
 Version:	0.9.9
 Release:	0.1
@@ -60,7 +60,7 @@ do tekstu konfiguracji.
 
 %package devel
 Summary:	OSSP cfg - Configuration Parsing - header files and development libraries
-Summary(pl.UTF-8):   OSSP cfg - parsowanie konfiguracji - pliki nagłówkowe i biblioteki dla deweloperów
+Summary(pl.UTF-8):	OSSP cfg - parsowanie konfiguracji - pliki nagłówkowe i biblioteki dla deweloperów
 Group:		Development/Libraries
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 
@@ -74,7 +74,7 @@ deweloperów.
 
 %package static
 Summary:	OSSP cfg - Configuration Parsing - static libraries
-Summary(pl.UTF-8):   OSSP cfg - parsowanie konfiguracji - biblioteki statyczne
+Summary(pl.UTF-8):	OSSP cfg - parsowanie konfiguracji - biblioteki statyczne
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{epoch}:%{version}-%{release}
 
@@ -86,7 +86,7 @@ OSSP cfg - parsowanie konfiguracji - biblioteki statyczne.
 
 %package -n perl-cfg
 Summary:	OSSP cfg - Configuration Parsing - Perl bindings
-Summary(pl.UTF-8):   OSSP cfg - parsowanie konfiguracji - dowiązania Perla
+Summary(pl.UTF-8):	OSSP cfg - parsowanie konfiguracji - dowiązania Perla
 Group:		Development/Languages/Perl
 
 %description -n perl-cfg
