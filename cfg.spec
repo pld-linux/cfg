@@ -10,13 +10,13 @@
 Summary:	OSSP cfg - Configuration Parsing
 Summary(pl.UTF-8):	OSSP cfg - parsowanie konfiguracji
 Name:		cfg
-Version:	0.9.9
+Version:	0.9.11
 Release:	0.1
 Epoch:		0
 License:	distributable (see README)
 Group:		Libraries
 Source0:	ftp://ftp.ossp.org/pkg/lib/cfg/%{name}-%{version}.tar.gz
-# Source0-md5:	66576d4d4ee01b29666aa19aaa3faa71
+# Source0-md5:	28bccd084b64b045b3e19eea54e001b6
 URL:		http://www.ossp.org/pkg/lib/cfg/
 BuildRequires:	autoconf
 BuildRequires:	automake
