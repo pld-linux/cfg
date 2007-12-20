@@ -8,7 +8,7 @@
 %bcond_without	perl	# build Perl bindings to C API
 #
 Summary:	OSSP cfg - Configuration Parsing
-Summary(pl.UTF-8):	OSSP cfg - parsowanie konfiguracji
+Summary(pl.UTF-8):	OSSP cfg - analiza konfiguracji
 Name:		cfg
 Version:	0.9.11
 Release:	0.1
@@ -43,7 +43,7 @@ into an Abstract Syntax Tree (AST), traversing the AST and optionally
 exporting the AST again as a configuration text.
 
 %description -l pl.UTF-8
-OSSP cfg to biblioteka ISO-C do parsowania dowolnych plików
+OSSP cfg to biblioteka ISO-C do analizy dowolnych plików
 konfiguracyjnych w stylu C/C++. Konfiguracja jest sekwencją dyrektyw.
 Każda dyrektywa zawiera zero lub więcej tokenów. Każdy token może być
 łańcuchem albo znowu całą sekwencją. Oznacza to, że składnia
@@ -60,7 +60,7 @@ do tekstu konfiguracji.
 
 %package devel
 Summary:	OSSP cfg - Configuration Parsing - header files and development libraries
-Summary(pl.UTF-8):	OSSP cfg - parsowanie konfiguracji - pliki nagłówkowe i biblioteki dla deweloperów
+Summary(pl.UTF-8):	OSSP cfg - analiza konfiguracji - pliki nagłówkowe i biblioteki dla deweloperów
 Group:		Development/Libraries
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 
@@ -69,12 +69,12 @@ OSSP cfg - Configuration Parsing - header files and development
 libraries.
 
 %description devel -l pl.UTF-8
-OSSP cfg - parsowanie konfiguracji - pliki nagłówkowe i biblioteki dla
+OSSP cfg - analiza konfiguracji - pliki nagłówkowe i biblioteki dla
 deweloperów.
 
 %package static
 Summary:	OSSP cfg - Configuration Parsing - static libraries
-Summary(pl.UTF-8):	OSSP cfg - parsowanie konfiguracji - biblioteki statyczne
+Summary(pl.UTF-8):	OSSP cfg - analiza konfiguracji - biblioteki statyczne
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{epoch}:%{version}-%{release}
 
@@ -82,18 +82,18 @@ Requires:	%{name}-devel = %{epoch}:%{version}-%{release}
 OSSP cfg - Configuration Parsing - static libraries.
 
 %description static -l pl.UTF-8
-OSSP cfg - parsowanie konfiguracji - biblioteki statyczne.
+OSSP cfg - analiza konfiguracji - biblioteki statyczne.
 
 %package -n perl-cfg
 Summary:	OSSP cfg - Configuration Parsing - Perl bindings
-Summary(pl.UTF-8):	OSSP cfg - parsowanie konfiguracji - dowiązania Perla
+Summary(pl.UTF-8):	OSSP cfg - analiza konfiguracji - dowiązania Perla
 Group:		Development/Languages/Perl
 
 %description -n perl-cfg
 OSSP cfg - Configuration Parsing - Perl bindings to C API.
 
 %description -n perl-cfg -l pl.UTF-8
-OSSP cfg - parsowanie konfiguracji - dowiązania Perla do API C.
+OSSP cfg - analiza konfiguracji - dowiązania Perla do API C.
 
 %prep
 %setup -q
