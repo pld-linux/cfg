@@ -12,7 +12,6 @@ Summary(pl.UTF-8):	OSSP cfg - analiza konfiguracji
 Name:		cfg
 Version:	0.9.11
 Release:	0.1
-Epoch:		0
 License:	distributable (see README)
 Group:		Libraries
 Source0:	ftp://ftp.ossp.org/pkg/lib/cfg/%{name}-%{version}.tar.gz
@@ -62,7 +61,7 @@ do tekstu konfiguracji.
 Summary:	OSSP cfg - Configuration Parsing - header files and development libraries
 Summary(pl.UTF-8):	OSSP cfg - analiza konfiguracji - pliki nagłówkowe i biblioteki dla deweloperów
 Group:		Development/Libraries
-Requires:	%{name} = %{epoch}:%{version}-%{release}
+Requires:	%{name} = %{version}-%{release}
 
 %description devel
 OSSP cfg - Configuration Parsing - header files and development
@@ -76,7 +75,7 @@ deweloperów.
 Summary:	OSSP cfg - Configuration Parsing - static libraries
 Summary(pl.UTF-8):	OSSP cfg - analiza konfiguracji - biblioteki statyczne
 Group:		Development/Libraries
-Requires:	%{name}-devel = %{epoch}:%{version}-%{release}
+Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
 OSSP cfg - Configuration Parsing - static libraries.
